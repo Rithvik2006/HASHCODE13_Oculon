@@ -1,0 +1,43 @@
+.ai-explainer-btn {
+  position: absolute;
+  z-index: 99999;
+  background: #0069ff;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+  font-weight: 600;
+}
+.ai-explainer-modal {
+  position: fixed;
+  z-index: 999999;
+  left: 0; top: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.35);
+}
+.ai-explainer-modal.hidden { display: none; }
+.ai-explainer-modal-content {
+  width: 720px;
+  max-width: 95%;
+  background: #fff;
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+  position: relative;
+}
+.ai-close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+.ai-modal-body { margin-top: 8px; }
+.ai-loading { color: #666; }
+.ai-output { background: #f7f7f8; padding: 12px; border-radius: 6px; max-height: 420px; overflow: auto; white-space: pre-wrap; }

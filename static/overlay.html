@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Dashboard + AI Explainer (overlay)</title>
+  <link rel="stylesheet" href="/static/css/ai-explainer.css">
+  <style>
+    /* Basic layout: iframe fills page */
+    body, html { height: 100%; margin:0; }
+    .iframe-wrap { position: relative; height: 100%; }
+    iframe { width:100%; height:100%; border:0; }
+    /* Example overlay boxes (you'll need to adjust coordinates/selectors to match your dashboard) */
+    .overlay-panel { position: absolute; pointer-events: auto; }
+    /* Example styling for overlay boxes used to map to panels */
+    .overlay-panel.ai-graph { border: 2px dashed rgba(0,0,255,0.08); }
+  </style>
+</head>
+<body>
+  <div class="iframe-wrap">
+    <!-- Replace the src below with your Influx Cloud dashboard link -->
+    <iframe id="influx-iframe" src="https://your-influx-cloud-dashboard-url"></iframe>
+
+    <!-- Example overlay mapping: you will need to position these over the chart areas using CSS or JS -->
+    <!-- Add data-graph-type attributes to map to the templates (per_ip_ewma, tcp_flags, etc.) -->
+    <div class="overlay-panel ai-graph" data-graph-type="per_ip_ewma" data-measurement="net_bytes" data-field="bytes"
+         style="left:22%; top:12%; width:24%; height:20%;"></div>
+
+    <div class="overlay-panel ai-graph" data-graph-type="dns_queries" data-measurement="dns" data-field="queries"
+         style="left:50%; top:12%; width:24%; height:20%;"></div>
+
+    <!-- more overlay panels as needed -->
+  </div>
+
+  <script>window.AI_EXPLAINER_API = "https://your-backend.example.com/api";</script>
+  <script src="/static/js/ai-explainer.js"></script>
+</body>
+</html>

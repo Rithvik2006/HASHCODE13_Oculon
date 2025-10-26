@@ -1,0 +1,9 @@
+requests
+fastapi
+uvicorn[standard]
+influxdb-client==1.34.0
+python-dotenv
+openai
+pydantic
+httpx
+jinja2
